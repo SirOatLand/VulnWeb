@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^$ /oat/index.php [L]
+ErrorDocument 404 /oat/index.php
