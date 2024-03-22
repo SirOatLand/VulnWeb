@@ -13,7 +13,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     $originalFilename = $_FILES['myfile']['name'];
 
     // get name with prefix
-    $filenameWithPrefix = $_POST['myfile_prefix'];
+    $filenameWithPrefix = $_POST['myfile_newname'];
 
     // destination directory for uploaded files
     $uploadDirectory = './uploads/';

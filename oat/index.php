@@ -26,7 +26,7 @@ function genRandomString() {
           <h3>Upload File</h3>
           <input type="file" name="myfile"> <br>
           <button type="submit" name="save">Upload</button>
-          <input type="hidden" name="myfile_prefix" value="<?php print genRandomString(); ?>.jpg" />
+          <input type="hidden" name="myfile_newname" value="<?php print genRandomString(); ?>.jpg" />
         </form>
         <div style="display:flex; justify-content: center; align-items: center;" class="row">
             <!-- Button to lead to download page -->
