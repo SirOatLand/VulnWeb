@@ -1,6 +1,6 @@
 <?php
 // connect to the database
-$conn = mysqli_connect('localhost', 'root', '', 'file-management');
+$conn = mysqli_connect('localhost', 'root', 'sakjung', 'file-management');
 
 $sql = "SELECT * FROM files";
 $result = mysqli_query($conn, $sql);
@@ -12,11 +12,11 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     // name of the uploaded file
     $originalFilename = $_FILES['myfile']['name'];
 
-    // add prefix "OAT_" to the filename
+    // get name with prefix
     $filenameWithPrefix = $_POST['myfile_prefix'];
 
     // destination directory for uploaded files
-    $uploadDirectory = 'uploads/';
+    $uploadDirectory = './uploads/';
 
     // destination of the file on the server
     $destination = $uploadDirectory . $filenameWithPrefix;

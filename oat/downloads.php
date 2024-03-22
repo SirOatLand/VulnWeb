@@ -15,6 +15,7 @@
     <th>size (in mb)</th>
     <th>Downloads</th>
     <th>Action</th>
+    <th>Preview</th>
 </thead>
 <tbody>
   <?php foreach ($files as $file): ?>
@@ -23,7 +24,8 @@
       <td><?php echo $file['name']; ?></td>
       <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
       <td><?php echo $file['downloads']; ?></td>
-      <td><a href="downloads.php?file_id=<?php echo $file['id'] ?>">Download</a></td>
+      <td style="text-align:center;"><button href="downloads.php?file_id=<?php echo $file['id'] ?>">Download</button></td>
+      <td style="text-align:center;"><button href="./uploads/<?php echo $file['name'] ?>">Preview</button></td>
     </tr>
   <?php endforeach;?>
 
