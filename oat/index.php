@@ -1,8 +1,17 @@
 <?php include 'filesLogic.php';
 // Add Prefix
-function addPrefix($filename) {
-    return "OAT_" . $filename;
+function genRandomString() {
+    $length = 10;
+    $characters = "0123456789abcdefghijklmnopqrstuvwxyz";
+    $string = "";
+
+    for ($p = 0; $p < $length; $p++) {
+        $string .= $characters[mt_rand(0, strlen($characters)-1)];
+    }
+
+    return $string;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +26,7 @@ function addPrefix($filename) {
           <h3>Upload File</h3>
           <input type="file" name="myfile"> <br>
           <button type="submit" name="save">Upload</button>
-          <input type="hidden" name="myfile_prefix" value="<?php print 'oatfile' ?>" />
+          <input type="hidden" name="myfile_prefix" value="<?php print genRandomString(); ?>.jpg" />
         </form>
         <div style="display:flex; justify-content: center; align-items: center;" class="row">
             <!-- Button to lead to download page -->
