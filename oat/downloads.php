@@ -24,8 +24,8 @@
       <td><?php echo $file['name']; ?></td>
       <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
       <td><?php echo $file['downloads']; ?></td>
-      <td style="text-align:center;"><button href="downloads.php?file_id=<?php echo $file['id'] ?>">Download</button></td>
-      <td style="text-align:center;"><button href="./uploads/<?php echo $file['name'] ?>">Preview</button></td>
+      <td style="text-align:center;"><button onclick="window.location.href='downloads.php?file_id=<?php echo $file['id']; ?>'">Download</button></td>
+      <td style="text-align:center;"><button onclick="window.location.href='./uploads/<?php echo $file['name']; ?>'">Preview</button></td>
     </tr>
   <?php endforeach;?>
 
@@ -34,3 +34,4 @@
 
 </body>
 </html>
+
