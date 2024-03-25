@@ -32,18 +32,18 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     $allowedExtensions = ['jpg', 'jpeg', 'png'];
 
     if (!in_array($extension, $allowedExtensions)) {
-        echo "You file extension must be jpg, .jpeg, or .png";
+        echo "<a id='warning'>You file extension must be .jpg, .jpeg, or .png</a>";
     } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1 Megabyte
-        echo "File too large!";
+        echo "<a id='warning'>File too large!</a>";
     } else {
         // move the uploaded (temporary) file to the specified destination
         if (move_uploaded_file($file, $destination)) {
             $sql = "INSERT INTO files (name, size, downloads) VALUES ('$filenameWithPrefix', $size, 0)";
             if (mysqli_query($conn, $sql)) {
-                echo "File uploaded successfully";
+                echo "<a id='warning'>File uploaded successfully</a>";
             }
         } else {
-            echo "Failed to upload file.";
+            echo "<a id='warning'>Failed to upload file.</a>";
         }
     }
 }
